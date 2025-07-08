@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function HomePage() {
   return (
     <main className="px-8 py-12">
@@ -5,7 +7,7 @@ export default function HomePage() {
       <p className="mb-6">こんにちは、今井啓太です。創造的な技術とデザインの融合を探求しています。</p>
 
       <div className="space-x-4">
-        <a href="/works" className="text-blue-600 underline">作品を見る</a>
+        <Link href="/works" className="text-blue-600 underline">作品を見る</Link>
       </div>
     </main>
   );

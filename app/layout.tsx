@@ -1,11 +1,13 @@
+import Link from 'next/link';
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
       <body className="font-sans bg-white text-black">
         <header className="p-4 border-b">
           <nav className="flex space-x-4">
-            <a href="/" className="font-bold">Home</a>
-            <a href="/works">Works</a>
+            <Link href="/" className="font-bold">Home</Link>
+            <Link href="/works">Works</Link>
           </nav>
         </header>
 
