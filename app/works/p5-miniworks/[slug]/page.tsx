@@ -5,15 +5,20 @@ import { miniWorks } from '../workData';
 import DynamicMiniSketch from '@/components/DynamicMiniSketch';
 
 type Params = { slug: string };
-type Props = { params: Params | Promise<Params> };
 
-/** ビルド時に静的生成（ISR も可） */
+/** SSG / ISR 用 – ここは同期のままで問題ありません */
 export async function generateStaticParams() {
   return miniWorks.map((w) => ({ slug: w.slug }));
 }
 
-export default async function MiniWorkDetailPage({ params }: Props) {
-  // params が Promise かもしれないので await で解決
+/* ---- ページ本体 ---- */
+export default async function MiniWorkDetailPage({
+  params,
+}: {
+  /** ★ Promise<Params> と書くのがポイント */
+  params: Promise<Params>;
+}) {
+  /* Promise を解決して slug を取り出す */
   const { slug } = await params;
 
   const work = miniWorks.find((w) => w.slug === slug);
