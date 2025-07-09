@@ -4,15 +4,19 @@ import { notFound } from 'next/navigation';
 import { miniWorks } from '../workData';
 import DynamicMiniSketch from '@/components/DynamicMiniSketch';
 
-type Props = { params: { slug: string } };
+type Params = { slug: string };
+type Props = { params: Params | Promise<Params> };
 
-/** ビルド時に静的生成したい場合 (任意) */
-export function generateStaticParams() {
+/** ビルド時に静的生成（ISR も可） */
+export async function generateStaticParams() {
   return miniWorks.map((w) => ({ slug: w.slug }));
 }
 
-export default function MiniWorkDetailPage({ params }: Props) {
-  const work = miniWorks.find((w) => w.slug === params.slug);
+export default async function MiniWorkDetailPage({ params }: Props) {
+  // params が Promise かもしれないので await で解決
+  const { slug } = await params;
+
+  const work = miniWorks.find((w) => w.slug === slug);
   if (!work) notFound();
 
   return (
@@ -23,7 +27,7 @@ export default function MiniWorkDetailPage({ params }: Props) {
       {/* Sketch を読み込み */}
       <DynamicMiniSketch slug={work.slug} canvasSize={760} />
 
-      {/* 一覧へ戻るリンク (任意) */}
+      {/* 一覧へ戻るリンク */}
       <p className="mt-6">
         <Link href="/works/p5-miniworks" className="underline">
           作品一覧へ戻る
