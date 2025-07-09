@@ -1,4 +1,5 @@
 // app/works/p5-miniworks/[slug]/page.tsx
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { miniWorks } from '../workData';
 import DynamicMiniSketch from '@/components/DynamicMiniSketch';
@@ -24,9 +25,9 @@ export default function MiniWorkDetailPage({ params }: Props) {
 
       {/* 一覧へ戻るリンク (任意) */}
       <p className="mt-6">
-        <a href="/works/p5-miniworks" className="text-blue-600 hover:underline">
-          ← 作品一覧へ戻る
-        </a>
+        <Link href="/works/p5-miniworks" className="underline">
+          作品一覧へ戻る
+        </Link>
       </p>
     </main>
   );
