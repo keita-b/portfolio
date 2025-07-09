@@ -1,13 +1,15 @@
-import { workMap } from '../workData';
+// app/works/[id]/page.tsx
+import { workMap } from '../workData';          // ← パスが合っていればそのまま
 
-type Props = {
-  params: {
-    id: string;
-  };
-};
+type Params = { id: string };
 
-export default function WorkDetailPage({ params }: Props) {
-  const work = workMap[params.id];
+export default async function WorkDetailPage({
+  params,
+}: {
+  params: Promise<Params>;     // ← Promise 指定
+}) {
+  const { id } = await params; // ← unwrap
+  const work = workMap[id];
 
   if (!work) {
     return (
