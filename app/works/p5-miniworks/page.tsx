@@ -26,8 +26,8 @@ export default function MiniWorksIndexPage() {
       </ul>
     
       <p className="mt-6">
-        <Link href="/works/p5-miniworks" className="text-blue-600 hover:underline">
-          ← 作品一覧へ戻る
+        <Link href="/works/p5-miniworks" className="underline">
+          作品一覧へ戻る
         </Link>
       </p>
 

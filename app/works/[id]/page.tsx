@@ -1,5 +1,6 @@
 // app/works/[id]/page.tsx
-import { workMap } from '../workData';          // ← パスが合っていればそのまま
+import Image from 'next/image';
+import { workMap } from '../workData';
 
 type Params = { id: string };
 
@@ -30,10 +31,11 @@ export default async function WorkDetailPage({
           <h2 className="text-xl font-semibold mb-2">{section.heading}</h2>
           <p className="mb-4 whitespace-pre-line">{section.content}</p>
           {section.image && (
-            <img
-              src={section.image}
-              alt={section.heading}
-              className="w-full max-w-lg rounded shadow"
+            <Image src={section.image}
+              alt="説明文"
+              width={400}
+              height={300}
+              priority
             />
           )}
         </section>
