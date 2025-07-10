@@ -12,7 +12,7 @@ export default function WorksPage() {
           </Link>
         </li>
         <li>
-          <Link href="/works/spotify-app" className="text-blue-600 underline">
+          <Link href="/works/audiocanvas" className="text-blue-600 underline">
             Audio Canvas
           </Link>
         </li>

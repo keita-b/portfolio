@@ -40,7 +40,7 @@ export default function MichibataOnBlackPage() {
               note
             </Link>{' '}
             と{' '}
-            <Link href="https://www.instagram.com/black_lab" className="underline">
+            <Link href="https://www.instagram.com/michibata_on_black/" className="underline">
               Instagram
             </Link>{' '}
             に公開
