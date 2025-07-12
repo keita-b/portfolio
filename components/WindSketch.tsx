@@ -23,7 +23,6 @@ export default function SpiralGridSketch() {
 
       const sketch = (p: any) => {
         const DIV = 16;
-        let cols: number, rows: number;
 
         p.setup = () => {
           const parentWidth = p._userNode.offsetWidth;
