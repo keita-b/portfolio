@@ -1,14 +1,11 @@
-// components/RippleSketch.tsx
 'use client';
 
 import { useRef, useEffect } from 'react';
 
-export type SketchProps = { size?: number };
-export default function RippleSketch({ size = 760 }: SketchProps) {
+export default function RippleSketch() {
   const wrapRef = useRef<HTMLDivElement>(null);
   const p5Ref = useRef<any>(null);
 
-  // ❶ wrap を初期化
   useEffect(() => {
     if (wrapRef.current) {
       while (wrapRef.current.firstChild) {
@@ -17,7 +14,6 @@ export default function RippleSketch({ size = 760 }: SketchProps) {
     }
   }, []);
 
-  // ❷ p5 セットアップ
   useEffect(() => {
     let cancelled = false;
 
@@ -26,21 +22,22 @@ export default function RippleSketch({ size = 760 }: SketchProps) {
       const p5 = (await import('p5')).default;
 
       const sketch = (p: any) => {
-        /* === ここから Processing → p5.js === */
         const NUM = 10;
         const ripples: Ripple[] = new Array(NUM);
         const alphaPrev: number[] = new Array(NUM);
 
         p.setup = () => {
-          p.createCanvas(size, size);
+          const w = p._userNode.offsetWidth;
+          const h = p._userNode.offsetHeight;
+          p.createCanvas(w, h);
           p.background(127);
           p.noFill();
           p.smooth();
           for (let i = 0; i < NUM; i++) {
             ripples[i] = new Ripple(
-              p.random(-100, 900),
-              p.random(-100, 900),
-              p.random(100, 255),
+              p.random(p.width * 0.1, p.width * 0.9),
+              p.random(p.height * 0.1, p.height * 0.9),
+              p.random(150, 255),
               p.random(27, 32),
               p.random(25, 30)
             );
@@ -48,13 +45,18 @@ export default function RippleSketch({ size = 760 }: SketchProps) {
           }
         };
 
+        p.windowResized = () => {
+          const w = p._userNode.offsetWidth;
+          const h = p._userNode.offsetHeight;
+          p.resizeCanvas(w, h);
+          p.background(127);
+        };
+
         p.draw = () => {
-          // 背景
           p.fill(127);
           p.noStroke();
           p.rect(0, 0, p.width, p.height);
 
-          // すべての波紋
           for (let i = 0; i < NUM; i++) {
             ripples[i].display1();
             ripples[i].display2();
@@ -63,9 +65,9 @@ export default function RippleSketch({ size = 760 }: SketchProps) {
 
             if (ripples[i].strokeAlpha < 0) {
               ripples[i] = new Ripple(
-                p.random(-100, 900),
-                p.random(-100, 900),
-                p.random(100, 255),
+                p.random(p.width * 0.1, p.width * 0.9),
+                p.random(p.height * 0.1, p.height * 0.9),
+                p.random(150, 255),
                 p.random(27, 32),
                 p.random(25, 30)
               );
@@ -104,12 +106,7 @@ export default function RippleSketch({ size = 760 }: SketchProps) {
             p.ellipse(this.xCenter, this.yCenter, this.side, this.side);
             if (this.side >= 2) {
               p.stroke(57, this.strokeAlpha);
-              p.ellipse(
-                this.xCenter,
-                this.yCenter,
-                this.side - 2,
-                this.side - 2
-              );
+              p.ellipse(this.xCenter, this.yCenter, this.side - 2, this.side - 2);
             }
           }
 
@@ -118,40 +115,20 @@ export default function RippleSketch({ size = 760 }: SketchProps) {
             p.noFill();
             p.strokeWeight(this.W);
             p.stroke(197, this.strokeAlpha);
-            p.ellipse(
-              this.xCenter,
-              this.yCenter,
-              this.side - this.interval1,
-              this.side - this.interval1
-            );
+            p.ellipse(this.xCenter, this.yCenter, this.side - this.interval1, this.side - this.interval1);
             if (this.side >= 2) {
               p.stroke(57, this.strokeAlpha);
-              p.ellipse(
-                this.xCenter,
-                this.yCenter,
-                this.side - 2 - this.interval1,
-                this.side - 2 - this.interval1
-              );
+              p.ellipse(this.xCenter, this.yCenter, this.side - 2 - this.interval1, this.side - 2 - this.interval1);
             }
           }
 
           display3() {
             if (this.side < this.interval1 + this.interval2) return;
             p.stroke(197, this.strokeAlpha);
-            p.ellipse(
-              this.xCenter,
-              this.yCenter,
-              this.side - this.interval1 - this.interval2,
-              this.side - this.interval1 - this.interval2
-            );
+            p.ellipse(this.xCenter, this.yCenter, this.side - this.interval1 - this.interval2, this.side - this.interval1 - this.interval2);
             if (this.side >= 2) {
               p.stroke(57, this.strokeAlpha);
-              p.ellipse(
-                this.xCenter,
-                this.yCenter,
-                this.side - 2 - this.interval1 - this.interval2,
-                this.side - 2 - this.interval1 - this.interval2
-              );
+              p.ellipse(this.xCenter, this.yCenter, this.side - 2 - this.interval1 - this.interval2, this.side - 2 - this.interval1 - this.interval2);
             }
           }
 
@@ -164,15 +141,15 @@ export default function RippleSketch({ size = 760 }: SketchProps) {
             }
           }
         }
-        /* === ここまで === */
       };
 
-      if (!cancelled) p5Ref.current = new p5(sketch, wrapRef.current!);
+      if (!cancelled) {
+        p5Ref.current = new p5(sketch, wrapRef.current!);
+      }
     };
 
     load();
 
-    // ❸ cleanup
     return () => {
       cancelled = true;
       p5Ref.current?.remove();
@@ -183,7 +160,7 @@ export default function RippleSketch({ size = 760 }: SketchProps) {
         }
       }
     };
-  }, [size]);
+  }, []);
 
-  return <div ref={wrapRef} />;
+  return <div ref={wrapRef} className="w-full h-full" />;
 }

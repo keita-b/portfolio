@@ -1,21 +1,11 @@
-// components/RotateLineSketch.tsx
 'use client';
 
 import { useRef, useEffect } from 'react';
 
-export type SketchProps = {
-  size?: number;           // ついでに可変サイズ対応 (任意)
-  options?: any;
-};
-
-export default function RotateLineSketch({
-  size = 800,
-  options,
-}: SketchProps) {
+export default function RotateLineSketch() {
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const p5InstanceRef = useRef<any>(null);
+  const p5Ref = useRef<any>(null);
 
-  /** ❶ 既存ノードを初手でクリーン */
   useEffect(() => {
     if (wrapperRef.current) {
       while (wrapperRef.current.firstChild) {
@@ -24,22 +14,31 @@ export default function RotateLineSketch({
     }
   }, []);
 
-  /** ❷ p5 セットアップ */
   useEffect(() => {
-    let isCancelled = false;
+    let cancelled = false;
 
-    const loadSketch = async () => {
-      if (!wrapperRef.current || p5InstanceRef.current) return;
+    const load = async () => {
+      if (!wrapperRef.current || p5Ref.current) return;
       const p5 = (await import('p5')).default;
 
       const sketch = (p: any) => {
-        const DIV = 40;
+        const DIV = 44;
         let cols: number, rows: number;
 
         p.setup = () => {
-          p.createCanvas(size, size);
-          cols = p.width / DIV;
-          rows = p.height / DIV;
+          const w = p._userNode.offsetWidth;
+          const h = p._userNode.offsetHeight;
+          p.createCanvas(w, h);
+          cols = Math.floor(w / DIV);
+          rows = Math.floor(h / DIV);
+        };
+
+        p.windowResized = () => {
+          const w = p._userNode.offsetWidth;
+          const h = p._userNode.offsetHeight;
+          p.resizeCanvas(w, h);
+          cols = Math.floor(w / DIV);
+          rows = Math.floor(h / DIV);
         };
 
         p.draw = () => {
@@ -59,26 +58,24 @@ export default function RotateLineSketch({
         };
       };
 
-      if (!isCancelled) {
-        p5InstanceRef.current = new p5(sketch, wrapperRef.current!);
+      if (!cancelled) {
+        p5Ref.current = new p5(sketch, wrapperRef.current!);
       }
     };
 
-    loadSketch();
+    load();
 
-    /** ❸ 完全クリーンアップ */
     return () => {
-      isCancelled = true;
-      p5InstanceRef.current?.remove();
-      p5InstanceRef.current = null;
-
+      cancelled = true;
+      p5Ref.current?.remove();
+      p5Ref.current = null;
       if (wrapperRef.current) {
         while (wrapperRef.current.firstChild) {
           wrapperRef.current.removeChild(wrapperRef.current.firstChild);
         }
       }
     };
-  }, [size, JSON.stringify(options)]); // options がオブジェクトの場合は stringify で安定化
+  }, []);
 
-  return <div ref={wrapperRef} />;
+  return <div ref={wrapperRef} className="w-full h-full" />;
 }

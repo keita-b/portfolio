@@ -1,14 +1,11 @@
-// components/ColorRotateLineSketch.tsx
 'use client';
 
 import { useRef, useEffect } from 'react';
 
-export type SketchProps = { size?: number };
-export default function ColorRotateLineSketch({ size = 800 }: SketchProps) {
+export default function ColorRotateLineSketch() {
   const wrapRef = useRef<HTMLDivElement>(null);
   const p5Ref = useRef<any>(null);
 
-  /* ❶ 既存ノードを初期化 */
   useEffect(() => {
     if (wrapRef.current) {
       while (wrapRef.current.firstChild) {
@@ -17,7 +14,6 @@ export default function ColorRotateLineSketch({ size = 800 }: SketchProps) {
     }
   }, []);
 
-  /* ❷ p5 セットアップ */
   useEffect(() => {
     let cancelled = false;
 
@@ -30,8 +26,18 @@ export default function ColorRotateLineSketch({ size = 800 }: SketchProps) {
         let cols: number, rows: number;
 
         p.setup = () => {
-          p.createCanvas(size, size);
+          const parentWidth = p._userNode.offsetWidth;
+          const parentHeight = p._userNode.offsetHeight;
+          p.createCanvas(parentWidth, parentHeight);
           p.colorMode(p.HSB, 360, 100, 100);
+          cols = p.width / DIV;
+          rows = p.height / DIV;
+        };
+
+        p.windowResized = () => {
+            const parentWidth = p._userNode.offsetWidth;
+            const parentHeight = p._userNode.offsetHeight;
+            p.resizeCanvas(parentWidth, parentHeight);
           cols = p.width / DIV;
           rows = p.height / DIV;
         };
@@ -62,7 +68,6 @@ export default function ColorRotateLineSketch({ size = 800 }: SketchProps) {
 
     load();
 
-    /* ❸ cleanup */
     return () => {
       cancelled = true;
       p5Ref.current?.remove();
@@ -73,7 +78,7 @@ export default function ColorRotateLineSketch({ size = 800 }: SketchProps) {
         }
       }
     };
-  }, [size]);
+  }, []);
 
-  return <div ref={wrapRef} />;
+  return <div ref={wrapRef} className="w-full h-full" />;
 }
