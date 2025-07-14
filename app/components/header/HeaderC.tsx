@@ -5,14 +5,14 @@ import Link from 'next/link';
 
 export default function HeaderC({ title }: { title: string }) {
   return (
-    <header className="flex items-center w-full px-4 py-2 bg-slate-900 text-white">
+    <header className="flex items-center w-full px-8 py-4 bg-black text-gray-500 border-b">
 
       {/* 左端：戻る */}
       <Link
         href="/works/p5-miniworks"
-        className="text-sm underline hover:text-gray-300 whitespace-nowrap"
+        className="text-sm hover:text-gray-300 whitespace-nowrap"
       >
-        戻る
+        ◀︎
       </Link>
 
       {/* フレックスアイテム間の残り幅を全部取る → タイトルが右端へ */}

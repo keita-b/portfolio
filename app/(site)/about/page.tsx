@@ -5,40 +5,44 @@ import Image from 'next/image';
 
 export default function AboutPage() {
   return (
-    <main className="px-6 py-12 flex flex-col items-center justify-center min-h-screen bg-white">
-      <div className="flex flex-col md:flex-row items-center gap-10 max-w-5xl w-full">
+  <main className="px-6 py-12">
+    <div className="flex flex-col md:flex-row items-start justify-center gap-10 max-w-4xl mx-auto">
+
+        
         {/* 画像（正方形） */}
-        <div className="w-100 h-100 relative shrink-0">
+        <div className="w-[300px] h-[300px] relative shrink-0">
           <Image
             src="/imaikeita.JPG"
             alt="Keita Imai"
             fill
-            className="object-cover rounded-lg border border-gray-300"
+            className="object-cover rounded border border-gray-300"
           />
         </div>
 
         {/* テキスト */}
         <div className="text-gray-800 max-w-xl">
 
-          <h2 className="text-xl font-semibold mt-6 mb-2">プロフィール</h2>
-          <ul className="mb-6 list-inside">
-            <li>名前：今井啓太</li>
-            <li>所属：法政大学大学院 デザイン工学研究科 システムデザイン専攻 修士2年</li>
+          <h2 className="text-xl text-gray-500 font-semibold mt-6 mb-2 border-b">Profile</h2>
+          <ul className="mb-12 list-inside">
+            <li>今井啓太</li>
+            <li>法政大学大学院 デザイン工学研究科 システムデザイン専攻 修士2年</li>
           </ul>
 
-          <h2 className="text-xl font-semibold mt-6 mb-2">趣味</h2>
+          <h2 className="text-xl text-gray-500 font-semibold mt-6 mb-2 border-b">Hobby</h2>
           <p className="mb-4">
             ディグること。
             <br/>
-            音楽、映画、漫画、本……　興味を持ったことはなんでもディグります。
+            音楽、映画、漫画、本……
+            <br/>
+            興味を持ったことはなんでもディグります。
           </p>
           <p className="mb-6">
-            好きな音楽を{' '}
+            好きな音楽は{' '}
             <a
               href="https://www.threads.net/@atiekiami"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 underline"
+              className="text-gray-500 hover:text-gray-900 hover:underline"
             >
               Threads
             </a>{' '}

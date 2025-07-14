@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { miniWorks } from '../../../../(site)/works/p5-miniworks/workData';
 import DynamicMiniSketch from '@/components/DynamicMiniSketch';
 import HeaderC from '@/app/components/header/HeaderC';
+import Footer from '@/app/components/footer'
 
 type Params = { slug: string };
 
@@ -23,7 +24,7 @@ export default async function MiniWorkDetailPage({
 
   // app/(canvas)/works/p5-miniworks/[slug]/page.tsx
   return (
-    <div className="w-screen h-screen flex flex-col bg-black text-white">
+    <div className="w-screen h-screen flex flex-col">
       <div className="z-10 relative">
         <HeaderC title={work.title} />
       </div>
@@ -32,6 +33,9 @@ export default async function MiniWorkDetailPage({
       <div className="flex-1 overflow-hidden">
         <DynamicMiniSketch slug={work.slug} />
       </div>
+
+      <Footer />
     </div>
+    
   );
 }
