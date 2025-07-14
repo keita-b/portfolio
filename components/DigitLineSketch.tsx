@@ -185,7 +185,23 @@ export default function DigitLineSketch({ delay = 1000 }: { delay?: number }) {
         p.windowResized = () => {
           canvasW = wrap.current!.offsetWidth;
           canvasH = wrap.current!.offsetHeight;
+          len = Math.min(canvasW, canvasH) / 10;
           p.resizeCanvas(canvasW, canvasH);
+
+          // 現在の数値を保持
+          const nextDigits = [
+            Math.floor(currentNum / 100),
+            Math.floor((currentNum % 100) / 10),
+            currentNum % 10,
+          ];
+
+          // digits を再生成
+          digits.length = 0; // 既存の配列を空にする
+          digits.push(
+            new Digit(0, nextDigits[0]),
+            new Digit(1, nextDigits[1]),
+            new Digit(2, nextDigits[2])
+          );
         };
       };
 

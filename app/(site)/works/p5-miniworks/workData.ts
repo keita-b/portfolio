@@ -19,12 +19,12 @@ export const miniWorks = [
     title: 'Ripples',
     description: '同心円の波紋アニメ'
   },
-  { 
+  {
     slug: 'wind',
     title: 'Wind',
     description: '風'
   },
-  { 
+  {
     slug: 'digit-line',
     title: 'Digit Line',
     description: 'デジタル数字'

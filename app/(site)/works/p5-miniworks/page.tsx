@@ -1,36 +1,36 @@
-// app/works/p5-miniworks/page.tsx
 import Link from 'next/link';
-import { miniWorks } from './workData';
+import { miniWorks } from '../../../(site)/works/p5-miniworks/workData'
 
-export const metadata = { title: 'p5 Mini Works' }; // SEO 用 (任意)
+export default async function MiniWorksPage({
+  params,
+}: {
+  params: Promise<{}>;
+}) {
+  await params;
 
-export default function MiniWorksIndexPage() {
   return (
-    <main className="p-6">
-      <h1 className="text-3xl font-bold mb-4">p5 Mini Works</h1>
+    <div className="h-full bg-black text-white px-8 py-6 flex flex-col">
+      <h1 className="text-2xl font-bold mb-4 shrink-0">p5.js Mini Works</h1>
 
-      <ul className="space-y-3">
+      {/* 作品一覧グリッド（6作品 × 2段 × 高さ調整） */}
+      <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {miniWorks.map((work) => (
-          <li key={work.slug} className="border-b pb-2">
-            <Link
-              href={`/works/p5-miniworks/${work.slug}`}
-              className="text-blue-600 hover:underline"
-            >
-              {work.title}
-            </Link>
-            {work.description && (
-              <p className="text-sm text-gray-500">{work.description}</p>
-            )}
-          </li>
+          <Link
+            key={work.slug}
+            href={`/works/p5-miniworks/${work.slug}`}
+            className="bg-white text-black rounded-md overflow-hidden hover:scale-105 transition-transform duration-200 flex flex-col"
+          >
+            <div className="aspect-[4/3] bg-gray-200">
+              <img
+                src={`/thumbnails/p5js-miniworks/${work.slug}.png`}
+                alt={work.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="px-2 py-1 text-sm font-medium">{work.title}</div>
+          </Link>
         ))}
-      </ul>
-    
-      <p className="mt-6">
-        <Link href="/works/p5-miniworks" className="underline">
-          作品一覧へ戻る
-        </Link>
-      </p>
-
-    </main>
+      </div>
+    </div>
   );
 }

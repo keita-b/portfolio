@@ -17,6 +17,9 @@ export default function DynamicMiniSketch({ slug, canvasSize }: Props) {
     'wind': () => import('@/components/WindSketch'),
     'digit-line': () => import('@/components/DigitLineSketch'),
     // 追加するときはここに行を増やす
+
+
+    'image-to-line': () => import('@/components/ImageToLineSketch'),
   };
 
   const importFn = importMap[slug];
