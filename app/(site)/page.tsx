@@ -1,8 +1,7 @@
 // app/(site)/page.tsx
-'use client';                          // ★追加（ページ全体が Client Component）
+'use client';
 
 import dynamic from 'next/dynamic';
-import HeaderA from '@/app/components/header/HeaderA';
 
 const Sketch = dynamic(() => import('@/components/ImageToLineSketch'), {
   ssr: false,
