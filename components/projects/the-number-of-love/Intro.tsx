@@ -1,4 +1,8 @@
-export default function AudioCanvasPage() {
+type Props = {
+  onChangeTab: (id: string) => void;
+};
+
+export default function AudioCanvasPage({ onChangeTab }: Props) {
   return (
     <div className="max-w-3xl mx-auto px-6 py-12 space-y-12">
         <p className="text-gray-500">
@@ -9,6 +13,16 @@ export default function AudioCanvasPage() {
             The Beatlesの音楽的変遷をインフォグラフィックで視覚化。複数のデータ（音楽性、リリース時期、歌詞など）を整理・分析し、時系列での変化を表現しました。
             フォントや配色を調整し、視認性と世界観の統一を図りました。特に後期作品のサイケデリック感を色彩で強調しています。
         </p>  
+
+        <div className="mt-10">
+            {/* 現在の内容の下などにボタン追加 */}
+            <button
+              onClick={() => onChangeTab('proposal')}
+              className="mt-8 px-4 py-2 bg-black text-white rounded hover:bg-gray-800"
+            >
+              提案タブへ移動
+            </button>
+        </div>
     </div>
   );
 }

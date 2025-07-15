@@ -1,8 +1,12 @@
-// app/works/ana-collab/page.tsx
-//import Image from "next/image";
+// components/projects/ana/intro.tsx
 
-export default function AnaCollabPage() {
+export default function ANAIntro({
+  onChangeTab,
+}: {
+  onChangeTab: (id: string) => void;
+}) {
   return (
+  <section>
     <main className="px-8 py-12 max-w-5xl mx-auto space-y-16">
       {/* ヘッダー */}
       <header className="space-y-2">
@@ -153,5 +157,14 @@ export default function AnaCollabPage() {
         </article>
       </section>
     </main>
+
+
+      <button
+        className="mt-4 px-4 py-2 bg-blue-600 text-white rounded"
+        onClick={() => onChangeTab('proposal')}
+      >
+        提案を見る
+      </button>
+    </section>
   );
 }

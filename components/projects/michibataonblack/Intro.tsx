@@ -3,7 +3,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function MichibataOnBlackPage() {
+type Props = {
+  onChangeTab: (id: string) => void;
+};
+
+export default function MichibataOnBlackPage({ onChangeTab }: Props) {
   return (
     <main className="px-8 py-12 max-w-3xl mx-auto">
       <h1 className="text-4xl font-bold mb-2">道端オンブラック</h1>
@@ -84,6 +88,16 @@ export default function MichibataOnBlackPage() {
           className="rounded-xl shadow-md mb-12"
         />
       )}
+
+      <div className="mt-10">
+        {/* 現在の内容の下などにボタン追加 */}
+        <button
+          onClick={() => onChangeTab('proposal')}
+          className="mt-8 px-4 py-2 bg-black text-white rounded hover:bg-gray-800"
+        >
+          提案タブへ移動
+        </button>
+      </div>
     </main>
   )
 }

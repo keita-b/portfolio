@@ -1,13 +1,21 @@
-import '@/app/globals.css'
-import Footer from '@/app/components/footer'
+import '@/app/globals.css';
+import Footer from '@/app/components/footer';
 
 export default function PieceLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='ja'>
-      <body>
-        <main className="mx-auto max-w-5xl px-6 py-12">{children}</main>
-        <Footer />
+    <html lang="ja" className="h-screen">
+      <body className="h-screen flex flex-col">
+        {/* ヘッダーとフッター以外をスクロール対象に */}
+        <div className="flex flex-col h-full">
+          {/* コンテンツエリアのみスクロール */}
+          <main className="flex-1 overflow-y-auto bg-white text-black">
+            {children}
+          </main>
+
+          {/* フッターは常に下に固定表示 */}
+          <Footer />
+        </div>
       </body>
     </html>
-  )
+  );
 }
