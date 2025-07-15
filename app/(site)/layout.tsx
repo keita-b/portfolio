@@ -7,7 +7,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ja">
       <body className="h-screen flex flex-col font-sans bg-white text-black">
         
-        <HeaderA /> {/* ←高さ固定（例：h-12） */}
+        <HeaderA />
         
         <main className="flex-1 overflow-auto bg-white">{children}</main>
         

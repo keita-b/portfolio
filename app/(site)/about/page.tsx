@@ -12,7 +12,7 @@ export default function AboutPage() {
         {/* 画像（正方形） */}
         <div className="w-[300px] h-[300px] relative shrink-0">
           <Image
-            src="/imaikeita.JPG"
+            src="/imaikeita.jpg"
             alt="Keita Imai"
             fill
             className="object-cover rounded border border-gray-300"
@@ -22,7 +22,7 @@ export default function AboutPage() {
         {/* テキスト */}
         <div className="text-gray-800 max-w-xl">
 
-          <h2 className="text-xl text-gray-500 font-semibold mt-6 mb-2 border-b">Profile</h2>
+          <h2 className="text-xl text-gray-500 font-semibold mt-4 mb-2 border-b">Profile</h2>
           <ul className="mb-12 list-inside">
             <li>今井啓太</li>
             <li>法政大学大学院 デザイン工学研究科 システムデザイン専攻 修士2年</li>
@@ -36,7 +36,7 @@ export default function AboutPage() {
             <br/>
             興味を持ったことはなんでもディグります。
           </p>
-          <p className="mb-6">
+          <p className="mb-4">
             好きな音楽は{' '}
             <a
               href="https://www.threads.net/@atiekiami"

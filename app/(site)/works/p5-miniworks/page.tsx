@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { miniWorks } from '../../../(site)/works/p5-miniworks/workData'
+import { miniWorks } from '@/app/(site)/works/p5-miniworks/workData'
 
 export default async function MiniWorksPage() {
   return (

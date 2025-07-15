@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { miniWorks } from '../../../../(site)/works/p5-miniworks/workData';
+import { miniWorks } from '@/app/(site)/works/p5-miniworks/workData';
 import DynamicMiniSketch from '@/components/DynamicMiniSketch';
 import HeaderC from '@/app/components/header/HeaderC';
 import Footer from '@/app/components/footer'

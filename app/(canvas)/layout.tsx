@@ -1,5 +1,5 @@
 // app/(canvas)/layout.tsx
-import '../globals.css';
+import '@/app/globals.css'
 import { ReactNode } from 'react';
 
 export default function CanvasRootLayout({ children }: { children: ReactNode }) {
