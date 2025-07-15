@@ -4,7 +4,7 @@ export const works = [
   {
     href: '/works/the-number-of-love',
     title: 'The Number of Love',
-    thumbnail: '/thumbnails/works/BeatlesInfo.png',
+    thumbnail: '/thumbnails/works/the-number-of-love.png',
   },
   {
     href: '/works/audio-canvas',
@@ -14,12 +14,12 @@ export const works = [
   {
     href: '/works/ana',
     title: 'ANAコラボ授業',
-    thumbnail: '/thumbnails/works/ana.png',
+    thumbnail: '/thumbnails/works/ana-thumbnail.png',
   },
   {
     href: '/works/michibata-on-black',
     title: '道端オンブラック',
-    thumbnail: '/thumbnails/works/michibataonblack.png',
+    thumbnail: '/thumbnails/works/mob.png',
   },
   {
     href: '/works/experimental-work',
@@ -29,6 +29,6 @@ export const works = [
   {
     href: '/works/p5-miniworks',
     title: 'p5js Mini Works',
-    thumbnail: '/thumbnails/works/p5jsminiworks.png',
+    thumbnail: '/thumbnails/works/p5-mini-works.png',
   },
 ];

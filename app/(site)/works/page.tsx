@@ -21,7 +21,7 @@ export default function WorksPage() {
             href={work.href}
             className="bg-white text-black rounded border border-gray-500 overflow-hidden hover:scale-103 transition-transform duration-200 flex flex-col"
           >
-            <div className="aspect-[16/9] bg-gray-200">
+            <div className="aspect-[16/9] bg-white">
               <Image
                 src={work.thumbnail}
                 alt={work.title}
