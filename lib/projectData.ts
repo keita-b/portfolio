@@ -42,6 +42,7 @@ export const projectData: Record<string, ProjectMeta> = {
       { id: 'intro', label: '活動内容' },
       { id: 'web', label: 'Webサイト' },
       { id: 'degree-show', label: 'ゼミ展' },
+      { id: 'mob-book', label: '本' },
     ],
   },
   'experimental-work': {

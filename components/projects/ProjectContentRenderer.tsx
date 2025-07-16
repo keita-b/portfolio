@@ -9,6 +9,7 @@ import ANAProposal from '@/components/projects/ana/proposal'
 import MichibataOnBlackIntro from '@/components/projects/michibataonblack/Intro';
 import MichibataOnBlackWeb from '@/components/projects/michibataonblack/web';
 import MichibataOnBlackDegreeShow from '@/components/projects/michibataonblack/degree-show';
+import MichibataOnBlackBook from '@/components/projects/michibataonblack/mob-book';
 
 import ExperimentalIntro from '@/components/projects/experimentalgraphics/Intro'
 
@@ -51,7 +52,9 @@ export default function ProjectContentRenderer({
       case 'web':
         return <MichibataOnBlackWeb onChangeTab={onChangeTab} />;
       case 'degree-show':
-        return <MichibataOnBlackDegreeShow />;
+        return <MichibataOnBlackDegreeShow onChangeTab={onChangeTab} />;
+      case 'mob-book':
+        return <MichibataOnBlackBook />
     }
   }
   else if (slug === 'experimental-work') {
