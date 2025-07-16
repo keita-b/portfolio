@@ -1,28 +1,29 @@
-type Props = {
-  onChangeTab: (id: string) => void;
-};
+import Image from 'next/image';
 
-export default function AudioCanvasPage({ onChangeTab }: Props) {
+export default function AudioCanvasPage() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-12 space-y-12">
-        <p className="text-gray-500">
-            The Beatles Info Graphic
-            2023年5月〜7月
-            
-            課題説明
-            The Beatlesの音楽的変遷をインフォグラフィックで視覚化。複数のデータ（音楽性、リリース時期、歌詞など）を整理・分析し、時系列での変化を表現しました。
-            フォントや配色を調整し、視認性と世界観の統一を図りました。特に後期作品のサイケデリック感を色彩で強調しています。
-        </p>  
+    <div className="mx-auto px-6 py-6 space-y-6">
+      <p className="text-gray-500 leading-relaxed">
+        この課題では、自分で調査テーマを設定し、それをもとにインフォグラフィックを作成しました。
+        <br />
+        私は「The Beatles」の楽曲の歌詞に登場する「Love」という単語の数に注目し、
+        アルバムごとにその数を調査しました。
+        <br />
+        調査結果は、ハートの大きさと数字で可視化し、一目で比較できるようにデザインしました。
+        <br />
+        また、各アルバムジャケットをモチーフにしたデザイン要素も取り入れ、
+        ファンが楽しめるグラフィックになるよう工夫しました。
+      </p>
 
-        <div className="mt-10">
-            {/* 現在の内容の下などにボタン追加 */}
-            <button
-              onClick={() => onChangeTab('proposal')}
-              className="mt-8 px-4 py-2 bg-black text-white rounded hover:bg-gray-800"
-            >
-              提案タブへ移動
-            </button>
-        </div>
+      <div className="relative mx-auto w-full">
+        <Image
+          src="/thumbnails/works/the-number-of-love.png"
+          alt="The Number of Love in the Beatles Album"
+          width={1200} // 高解像度画像にも対応
+          height={800}
+          className="object-contain w-full h-auto border border-gray-300"
+        />
+      </div>
     </div>
   );
 }

@@ -52,42 +52,15 @@ export default function MichibataOnBlackPage({ onChangeTab }: Props) {
         </ul>
       </section>
 
-      {/* Webサイト制作 */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Webサイト制作</h2>
-        <p className="mb-4">
-          プロジェクトの世界観を伝えるプラットフォームとして
-          <Link href="https://vdl.ws.hosei.ac.jp/blacklab/" className="underline ml-1">
-            Black Lab公式サイト
-          </Link>
-          を構築（Next.js + Tailwind CSS）。情報設計からデザイン、実装まで担当し、
-          2024.07.20 に公開しました。サイトではプロジェクト概要、メンバー紹介、
-          最新ニュース、外部記事へのリンクをまとめて発信しています。
-          {/* ([vdl.ws.hosei.ac.jp](https://vdl.ws.hosei.ac.jp/blacklab/index.html)) */}
-        </p>
-      </section>
-
-      {/* 外部展示 */}
-      <section>
-        <h2 className="text-2xl font-semibold mb-4">外部展示</h2>
-        <p className="mb-4">
-          2025.03.08–10、表参道 <em>Tiers Gallery</em> にて開催された卒業制作展「だって」に出展。
-          プロジェクト中間報告として92ページの冊子を制作し、プリント作品とともに展示しました。
-          体験コーナーでは実際に黒布の上で撮影体験ができ、来場者から都市の植生への気づきが
-          得られたとの声を多数いただきました。 {/* ([vdl.ws.hosei.ac.jp](https://vdl.ws.hosei.ac.jp/archives/graduation2024/), [x.com](https://x.com/keitaonishi/status/1902298261685223818?utm_source=chatgpt.com)) */}
-        </p>
-      </section>
-
-      {/* Optional hero image example */}
-      {false && (
+      <div className="relative mx-auto w-full">
         <Image
-          src="/works/mob/hero.jpg"
-          alt="道端オンブラックのキービジュアル"
-          width={800}
-          height={450}
-          className="rounded-xl shadow-md mb-12"
+          src="/works/experimental/mirror.png"
+          alt="The Number of Love in the Beatles Album"
+          width={1200} // 高解像度画像にも対応
+          height={800}
+          className="object-contain w-full h-auto border border-gray-300"
         />
-      )}
+      </div>
 
       <div className="mt-10">
         {/* 現在の内容の下などにボタン追加 */}

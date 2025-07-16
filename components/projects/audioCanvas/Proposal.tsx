@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function AudioCanvasIntro() {
   return (
     <section>
@@ -8,12 +10,17 @@ export default function AudioCanvasIntro() {
         その中からユーザーが任意のグラフィックを選択することで、視覚的な印象のみに基づく、思いがけない音楽との出会いを提供できる。
         このプロジェクトでは、その中の楽曲データを取得してグラフィックを生成するプログラムを作成した。
         <br/>
-        <br/>
-        ここにグラフィックを作成した並べた一枚絵
-        <br/>
-        <br/>
-        余裕があれば、グラフィックの生成体験ページへ誘導
       </p>
+
+      <div className="relative mx-auto w-full">
+          <Image
+            src="/thumbnails/works/audiocanvas.png"
+            alt="The Number of Love in the Beatles Album"
+            width={1200} // 高解像度画像にも対応
+            height={800}
+            className="object-contain w-full h-auto mt-10"
+          />
+      </div>
     </section>
   );
 }

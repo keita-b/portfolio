@@ -8,7 +8,7 @@ type Tab = { id: string; label: string };
 type Props = {
   title: string;
   period: string;
-  skills: string[];
+  tools: string[];
   tabs: Tab[];
   selectedTab: string;
   onChangeTab: (id: string) => void;
@@ -17,7 +17,7 @@ type Props = {
 export default function HeaderWithTabs({
   title,
   period,
-  skills,
+  tools,
   tabs,
   selectedTab,
   onChangeTab,
@@ -44,7 +44,7 @@ export default function HeaderWithTabs({
         {/* 中央：制作期間とスキル */}
         <div className="flex flex-wrap gap-x-4 text-sm text-gray-400">
           <span>制作期間：{period}</span>
-          <span>使用ツール：{skills.join(' / ')}</span>
+          <span>使用ツール：{tools.join(' / ')}</span>
         </div>
 
         {/* 右：タブ */}

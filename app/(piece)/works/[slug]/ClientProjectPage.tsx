@@ -12,7 +12,7 @@ type Props = {
   data: {
     title: string;
     period: string;
-    skills: string[];
+    tools: string[];
     tabs: Tab[];
   };
 };
@@ -27,7 +27,7 @@ export default function ClientProjectPage({ slug, data }: Props) {
         selectedTab={selectedTab}
         onChangeTab={setSelectedTab}
       />
-      <main className="px-6 max-w-3xl mx-auto pt-12 mb-10">
+      <main className="px-6 max-w-5xl mx-auto pt-6 pb-6">
         <ProjectContentRenderer
           slug={slug}
           selectedTab={selectedTab}

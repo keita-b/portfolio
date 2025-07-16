@@ -3,7 +3,7 @@
 export const works = [
   {
     href: '/works/the-number-of-love',
-    title: 'The Number of Love',
+    title: 'The Number of "Love"',
     thumbnail: '/thumbnails/works/the-number-of-love.png',
   },
   {
@@ -13,7 +13,7 @@ export const works = [
   },
   {
     href: '/works/ana',
-    title: 'ANAコラボ授業',
+    title: 'ANA New Business Proposal',
     thumbnail: '/thumbnails/works/ana-thumbnail.png',
   },
   {
@@ -23,7 +23,7 @@ export const works = [
   },
   {
     href: '/works/experimental-work',
-    title: '進行中の卒業制作',
+    title: 'Experimental Work [In Progress]',
     thumbnail: '/thumbnails/works/experimental.png',
   },
   {
