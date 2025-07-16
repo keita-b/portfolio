@@ -27,7 +27,7 @@ export default function ClientProjectPage({ slug, data }: Props) {
         selectedTab={selectedTab}
         onChangeTab={setSelectedTab}
       />
-      <main className="px-6 max-w-5xl mx-auto pt-6 pb-6">
+      <main className="px-6 max-w-4xl mx-auto pt-6 pb-6">
         <ProjectContentRenderer
           slug={slug}
           selectedTab={selectedTab}

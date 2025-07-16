@@ -1,7 +1,6 @@
 import TheNumberOfLoveIntro from '@/components/projects/the-number-of-love/Intro';
 
 import AudioCanvasIntro from '@/components/projects/audioCanvas/Intro';
-import AudioCanvasProposal from '@/components/projects/audioCanvas/Proposal';
 
 import ANAIntro from '@/components/projects/ana/Intro';
 import ANAResearch from '@/components/projects/ana/research'
@@ -32,9 +31,7 @@ export default function ProjectContentRenderer({
   else if (slug === 'audio-canvas') {
     switch (selectedTab) {
       case 'intro':
-        return <AudioCanvasIntro onChangeTab={onChangeTab} />;
-      case 'proposal':
-        return <AudioCanvasProposal />;
+        return <AudioCanvasIntro />;
     }
   }
   else if(slug === 'ana'){

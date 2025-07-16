@@ -1,5 +1,38 @@
 // components/projects/ana/intro.tsx
 
+//import Image from 'next/image';
+
+type Props = {
+  onChangeTab: (id: string) => void;
+};
+
+export default function ANAResearch({ onChangeTab }: Props) {
+  return (
+    <section>
+      <h2 className="text-2xl font-bold mb-6">申し訳ありません。調整中です。</h2>
+
+      <div className="mt-10">
+        <button
+          onClick={() => onChangeTab('research')}
+          className="mt-8 px-4 py-2 bg-black text-white rounded hover:bg-gray-800"
+        >
+          Research →
+        </button>
+      </div>
+    </section>
+  );
+}
+
+
+
+
+
+
+
+
+
+/*
+
 export default function ANAIntro({
   onChangeTab,
 }: {
@@ -8,7 +41,7 @@ export default function ANAIntro({
   return (
   <section>
     <main className="px-8 py-12 max-w-5xl mx-auto space-y-16">
-      {/* ヘッダー */}
+      
       <header className="space-y-2">
         <h1 className="text-4xl font-bold">ANA × ブランド戦略とデザイン — Team C</h1>
         <p className="text-sm text-gray-500">
@@ -19,7 +52,7 @@ export default function ANAIntro({
         </p>
       </header>
 
-      {/* 課題の概要 */}
+      
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold">課題の概要</h2>
         <p>
@@ -29,7 +62,7 @@ export default function ANAIntro({
         </p>
       </section>
 
-      {/* グループワークの進め方 */}
+      
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold">グループワークの進め方</h2>
         <ol className="list-decimal list-inside space-y-1">
@@ -41,7 +74,7 @@ export default function ANAIntro({
         </ol>
       </section>
 
-      {/* 調査の内容 */}
+      
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold">調査の内容</h2>
         <ul className="list-disc list-inside space-y-1">
@@ -51,7 +84,7 @@ export default function ANAIntro({
         </ul>
       </section>
 
-      {/* 調査の分析 */}
+      
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold">調査の分析</h2>
         <div className="grid md:grid-cols-2 gap-6">
@@ -72,7 +105,7 @@ export default function ANAIntro({
         </div>
       </section>
 
-      {/* STPなど戦略の決定 */}
+      
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold">STP &amp; 戦略の決定</h2>
         <p>
@@ -92,11 +125,11 @@ export default function ANAIntro({
         </p>
       </section>
 
-      {/* 提案内容 */}
+      
       <section className="space-y-4">
         <h2 className="text-2xl font-semibold">提案内容</h2>
 
-        {/* 1. 祭りパッケージ */}
+        
         <article className="space-y-2">
           <h3 className="text-xl font-semibold">1. 祭り特化型トラベルパッケージ</h3>
           <p>
@@ -105,7 +138,7 @@ export default function ANAIntro({
           </p>
         </article>
 
-        {/* 2. ステークホルダー価値 */}
+        
         <article className="space-y-2">
           <h3 className="text-xl font-semibold">2. 三者メリット設計</h3>
           <div className="overflow-x-auto">
@@ -140,7 +173,7 @@ export default function ANAIntro({
           </div>
         </article>
 
-        {/* 3. カスタマージャーニー */}
+        
         <article className="space-y-2">
           <h3 className="text-xl font-semibold">3. カスタマージャーニー</h3>
           <ol className="list-decimal list-inside space-y-1">
@@ -168,3 +201,4 @@ export default function ANAIntro({
     </section>
   );
 }
+*/

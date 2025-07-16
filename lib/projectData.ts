@@ -22,7 +22,6 @@ export const projectData: Record<string, ProjectMeta> = {
     tools: ['processing', 'Spotify API'],
     tabs: [
       { id: 'intro', label: '制作背景' },
-      { id: 'proposal', label: '提案' },
     ],
   },
   'ana': {
