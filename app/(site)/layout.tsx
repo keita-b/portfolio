@@ -4,6 +4,7 @@ import '@/app/globals.css'
 import HeaderA from '@/app/components/header/HeaderA'
 import Footer from '@/app/components/footer'
 import { usePathname } from 'next/navigation';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }`}
         >
           {children}
+          <Analytics />
         </main>
         
         <Footer />
