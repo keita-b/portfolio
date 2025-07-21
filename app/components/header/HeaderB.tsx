@@ -43,8 +43,8 @@ export default function HeaderWithTabs({
 
         {/* 中央：制作期間とスキル */}
         <div className="flex flex-wrap gap-x-4 text-sm text-gray-400">
-          <span>制作期間：{period}</span>
-          <span>使用ツール：{tools.join(' / ')}</span>
+          <span>project duration: {period}</span>
+          <span>tools: {tools.join(' / ')}</span>
         </div>
 
         {/* 右：タブ */}

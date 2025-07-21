@@ -1,204 +1,72 @@
 // components/projects/ana/intro.tsx
 
-//import Image from 'next/image';
-
 type Props = {
   onChangeTab: (id: string) => void;
 };
 
-export default function ANAResearch({ onChangeTab }: Props) {
+export default function ANAIntro({ onChangeTab }: Props) {
   return (
-    <section>
-      <h2 className="text-2xl font-bold mb-6">申し訳ありません。調整中です。</h2>
+    <div className="mx-auto max-w-2xl py-6 space-y-6 text-gray-500">
+      <p className="leading-relaxed mb-4">
+        <strong className="block mb-6">概要</strong>
+        修士1年時、ANAと連携した「ブランド戦略とデザイン」という授業で、ANAの担当者から提示された実際の企業課題を解決するグループワークを行なった。
+      </p>
+
+      <div className="bg-gray-50 border border-gray-200 rounded p-4">
+        <p className="mb-2">課題</p>
+        <ul className="list-disc list-inside space-y-1 text-sm">
+          <li>移動需要を喚起するブランディング</li>
+          <li>顧客との自然で継続的なタッチポイントの構築</li>
+          <li>上記をもとにした具体的なプロダクト開発</li>
+        </ul>
+        <p className="mt-2 text-sm mb-0">
+          また、ANAのNFT事業を活用することが必須条件だった。
+        </p>
+      </div>
+
+
+
+      <hr className="my-16 border-gray-300" />
+
+
+
+      <div className="my-10">
+        <strong className="block mb-6">方針</strong>
+      </div>
+      <p className="leading-relaxed mb-3">
+        課題に取り組むにあたり、目的を以下のように整理した。
+      </p>
+      <div className="bg-gray-50 border border-gray-200 rounded p-4">
+        <ul className="list-disc list-inside space-y-1 text-sm leading-relaxed mb-0">
+          <li>移動需要の喚起</li>
+          <li>継続的なタッチポイントの構築</li>
+          <li>新規顧客の獲得</li>
+        </ul>
+      </div>
+
+      <p className="leading-relaxed mb-3">
+        また、ANAの強みと課題を把握するため、統合報告書や公式サイトを調査した。
+      </p>
+      <div className="bg-gray-50 border border-gray-200 rounded p-4">
+        <ul className="list-disc list-inside space-y-1 text-sm leading-relaxed mb-0">
+          <li>地方創生に積極的に取り組んでいる</li>
+          <li>人とのつながりを大切にしている</li>
+          <li>ターゲットが明確でなく、強みが一般ユーザーに伝わりにくい</li>
+        </ul>
+      </div>
+      <p className="leading-relaxed mb-0">
+        <br />
+        そこで、ターゲットを設定するため、「人はなぜ移動するのか？」という根源的な問いについて仮説を立て、調査を行なった。
+      </p>
 
       <div className="mt-10">
         <button
           onClick={() => onChangeTab('research')}
           className="mt-8 px-4 py-2 bg-black text-white rounded hover:bg-gray-800"
         >
-          Research →
+          reserch →
         </button>
       </div>
-    </section>
+    </div>
   );
 }
-
-
-
-
-
-
-
-
-
-/*
-
-export default function ANAIntro({
-  onChangeTab,
-}: {
-  onChangeTab: (id: string) => void;
-}) {
-  return (
-  <section>
-    <main className="px-8 py-12 max-w-5xl mx-auto space-y-16">
-      
-      <header className="space-y-2">
-        <h1 className="text-4xl font-bold">ANA × ブランド戦略とデザイン — Team C</h1>
-        <p className="text-sm text-gray-500">
-          Brand Strategy &amp; Design Collaboration&nbsp;/&nbsp;2025 Spring
-        </p>
-        <p className="text-sm">
-          Members&nbsp;:&nbsp;今井啓太&nbsp;|&nbsp;太田ゆり&nbsp;|&nbsp;キム&nbsp;ナヨン&nbsp;|&nbsp;前田悠斗
-        </p>
-      </header>
-
-      
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold">課題の概要</h2>
-        <p>
-          ANA の強みである「人と地域をつなぐネットワーク」を活かし、若年層（20–30 代）の移動需要を
-          喚起しながら地域活性化を図るブランド施策を提案しました。ゴールは
-          <strong>①継続的なタッチポイントの構築&nbsp;②旅前〜旅後までのブランド体験最適化</strong> です。
-        </p>
-      </section>
-
-      
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold">グループワークの進め方</h2>
-        <ol className="list-decimal list-inside space-y-1">
-          <li>Mission 設定（課題の言語化）</li>
-          <li>仮説立案：人はなぜ移動するのか？</li>
-          <li>リサーチ分担：SNS 定量 / インタビュー / 二次データ</li>
-          <li>Miro でインサイト抽出 → STP 設計</li>
-          <li>スライド作成 &amp; 模擬プレゼン → 本発表</li>
-        </ol>
-      </section>
-
-      
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold">調査の内容</h2>
-        <ul className="list-disc list-inside space-y-1">
-          <li>SNS 投稿 3,000 件以上をスクレイピング（移動系ワード）</li>
-          <li>祭り主催者 2 名・参加経験者 4 名へオンラインインタビュー</li>
-          <li>NTT 東日本「全国の祭り・イベント実態調査 2023」など二次データ</li>
-        </ul>
-      </section>
-
-      
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold">調査の分析</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-4 border rounded-lg">
-            <h3 className="font-semibold">Insight 1 — つながり欲求</h3>
-            <p>
-              地元の食・景色・人との再会を求める投稿が多く、
-              <em>寂しさや安心感を満たす</em> ことが移動動機になると判明。
-            </p>
-          </div>
-          <div className="p-4 border rounded-lg">
-            <h3 className="font-semibold">Insight 2 — 刺激欲求</h3>
-            <p>
-              非日常体験への好奇心・興奮を求める声も多数。
-              旅行初心者だけでなく日常に飽きた社会人にも刺さる。
-            </p>
-          </div>
-        </div>
-      </section>
-
-      
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold">STP &amp; 戦略の決定</h2>
-        <p>
-          Segmentation は「心理的距離 × 経験有無」マトリクスで分類し、
-          下記 2 クラスタをターゲットに設定。
-        </p>
-        <ul className="list-disc list-inside space-y-1 ml-4">
-          <li>家族や地元から離れて暮らす若年層（寂しさクラスタ）</li>
-          <li>マンネリに飽きた社会人・学生（刺激クラスタ）</li>
-        </ul>
-        <p>
-          Positioning キーワードは
-          <strong>“空を介して人と地域をつなぐエモーショナル・アンカー”</strong>
-          。Value Proposition は
-          <strong>「賑々しいふるさと：繋がりが生む新たな居場所」</strong>
-          です。
-        </p>
-      </section>
-
-      
-      <section className="space-y-4">
-        <h2 className="text-2xl font-semibold">提案内容</h2>
-
-        
-        <article className="space-y-2">
-          <h3 className="text-xl font-semibold">1. 祭り特化型トラベルパッケージ</h3>
-          <p>
-            航空券・祭り参加枠・宿泊を一括販売。参加証として NFT
-            を発行し、帰宅後も 3D データで思い出を想起。
-          </p>
-        </article>
-
-        
-        <article className="space-y-2">
-          <h3 className="text-xl font-semibold">2. 三者メリット設計</h3>
-          <div className="overflow-x-auto">
-            <table className="min-w-[600px] border text-sm">
-              <thead>
-                <tr className="bg-gray-100">
-                  <th className="border px-3 py-1 text-left">ステークホルダー</th>
-                  <th className="border px-3 py-1 text-left">得られる価値</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="border px-3 py-1 font-medium">参加者</td>
-                  <td className="border px-3 py-1">
-                    孤独解消・地域交流・NFT コレクション
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border px-3 py-1 font-medium">祭り主催者</td>
-                  <td className="border px-3 py-1">
-                    資金・人手不足解消、全国 PR
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border px-3 py-1 font-medium">ANA</td>
-                  <td className="border px-3 py-1">
-                    移動需要創出、ブランド価値向上、新規 B2B 機会
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
-
-        
-        <article className="space-y-2">
-          <h3 className="text-xl font-semibold">3. カスタマージャーニー</h3>
-          <ol className="list-decimal list-inside space-y-1">
-            <li>
-              <strong>旅前&nbsp;:</strong>&nbsp;Web/SNS 広告 → パック購入 → NFT 受領
-            </li>
-            <li>
-              <strong>旅中&nbsp;:</strong>&nbsp;祭り準備ボランティア → 祭り参加 → コミュニティ形成
-            </li>
-            <li>
-              <strong>旅後&nbsp;:</strong>&nbsp;NFT 更新・SNS シェア → リピート誘導
-            </li>
-          </ol>
-        </article>
-      </section>
-    </main>
-
-
-      <button
-        className="mt-4 px-4 py-2 bg-blue-600 text-white rounded"
-        onClick={() => onChangeTab('proposal')}
-      >
-        提案を見る
-      </button>
-    </section>
-  );
-}
-*/

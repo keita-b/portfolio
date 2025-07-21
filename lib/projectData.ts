@@ -13,7 +13,7 @@ export const projectData: Record<string, ProjectMeta> = {
     period: '2023.05',
     tools: ['Gravid Desginer'],
     tabs: [
-      { id: 'intro', label: '制作背景' },
+      { id: 'intro', label: 'work' },
     ],
   },
   'audio-canvas': {
@@ -21,23 +21,24 @@ export const projectData: Record<string, ProjectMeta> = {
     period: '2024.12 ~ 2025.03',
     tools: ['processing', 'Spotify API'],
     tabs: [
-      { id: 'intro', label: '制作背景' },
+      { id: 'intro', label: 'work' },
     ],
   },
   'ana': {
-    title: 'ANA',
+    title: 'ANA New Business Proposal',
     period: '2025.06 ~ 2025.07',
-    tools: [''],
+    tools: ['Marketing Framework'],
     tabs: [
-      { id: 'intro', label: '概要' },
-      { id: 'research', label: '調査' },
-      { id: 'proposal', label: '提案' },
+      { id: 'intro', label: 'background' },
+      { id: 'research', label: 'research' },
+      { id: 'stp', label: 'STP' },
+      { id: 'proposal', label: 'proposal' },
     ],
   },
   'michibata-on-black': {
     title: '道端オンブラック',
     period: '2024.04 ~ 2025.03',
-    tools: ['Next.js', 'Spotify API'],
+    tools: ['HTML CSS Java Script', 'Illustrator', 'Photoshop', 'InDesign', 'Camera'],
     tabs: [
       { id: 'intro', label: '活動内容' },
       { id: 'web', label: 'Webサイト' },
@@ -50,7 +51,7 @@ export const projectData: Record<string, ProjectMeta> = {
     period: '2025.04 ~',
     tools: ['Next.js', 'Spotify API'],
     tabs: [
-      { id: 'intro', label: '制作背景' },
+      { id: 'intro', label: 'work' },
     ],
   },
 };

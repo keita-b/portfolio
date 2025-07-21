@@ -4,6 +4,7 @@ import AudioCanvasIntro from '@/components/projects/audioCanvas/Intro';
 
 import ANAIntro from '@/components/projects/ana/Intro';
 import ANAResearch from '@/components/projects/ana/research'
+import ANASTP from '@/components/projects/ana/stp'
 import ANAProposal from '@/components/projects/ana/proposal'
 
 import MichibataOnBlackIntro from '@/components/projects/michibataonblack/Intro';
@@ -41,6 +42,8 @@ export default function ProjectContentRenderer({
         return <ANAIntro onChangeTab={onChangeTab} />;
       case 'research':
         return <ANAResearch onChangeTab={onChangeTab} />;
+      case 'stp':
+        return <ANASTP onChangeTab={onChangeTab} />;
       case 'proposal':
         return <ANAProposal />;
     }
