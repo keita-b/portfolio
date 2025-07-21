@@ -2,6 +2,11 @@
 
 export const works = [
   {
+    href: '/works/cookie',
+    title: 'Cookie Design Project "2 in 1"',
+    thumbnail: '/thumbnails/works/cookie.png',
+  },
+  {
     href: '/works/the-number-of-love',
     title: 'The Number of "Love"',
     thumbnail: '/thumbnails/works/the-number-of-love.png',

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { works } from './worksData'; // ⬅️ hrefベースのデータ
+import { works } from './worksData';
 
 export default function WorksPage() {
   return (
@@ -10,7 +10,7 @@ export default function WorksPage() {
           Works
         </h1>
         <p className="text-sm text-gray-500">
-          制作した作品の一覧です。デザイン・技術・表現の実験的な試みを含んでいます。
+          制作した作品・提案したサービスの一覧です。
         </p>
       </div>
 

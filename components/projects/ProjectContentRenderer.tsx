@@ -1,3 +1,5 @@
+import CookieIntro from './cookie/Intro';
+
 import TheNumberOfLoveIntro from '@/components/projects/the-number-of-love/Intro';
 
 import AudioCanvasIntro from '@/components/projects/audioCanvas/Intro';
@@ -24,7 +26,13 @@ export default function ProjectContentRenderer({
   selectedTab: string;
   onChangeTab: (id: string) => void;
 }) {
-  if(slug === 'the-number-of-love') {
+  if(slug === 'cookie') {
+    switch (selectedTab) {
+      case 'intro':
+        return <CookieIntro />;
+    }
+  }
+  else if (slug === 'the-number-of-love') {
     switch (selectedTab) {
       case 'intro':
         return <TheNumberOfLoveIntro />;

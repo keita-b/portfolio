@@ -8,6 +8,14 @@ type ProjectMeta = {
 };
 
 export const projectData: Record<string, ProjectMeta> = {
+  'cookie': {
+    title: 'Cookie Design Project "2 in 1"',
+    period: '2021.06',
+    tools: ['紙粘土', '真空成形機', 'Gravid Designer'],
+    tabs: [
+      { id: 'intro', label: 'work' },
+    ],
+  },
   'the-number-of-love': {
     title: 'The Number of "Love" In The Beatles Album',
     period: '2023.05',
