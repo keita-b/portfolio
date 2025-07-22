@@ -22,6 +22,16 @@ export const works = [
     thumbnail: '/thumbnails/works/ana-thumbnail.png',
   },
   {
+    href: '/works/ta',
+    title: 'TA業務の効率化',
+    thumbnail: '/thumbnails/works/ta.png',
+  },
+  {
+    href: '/works/dig-ru',
+    title: 'Digる',
+    thumbnail: '/thumbnails/works/dig-ru.png',
+  },
+  {
     href: '/works/michibata-on-black',
     title: '道端オンブラック',
     thumbnail: '/thumbnails/works/mob.png',

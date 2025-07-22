@@ -9,6 +9,11 @@ import ANAResearch from '@/components/projects/ana/research'
 import ANASTP from '@/components/projects/ana/stp'
 import ANAProposal from '@/components/projects/ana/proposal'
 
+import Attendance from '@/components/projects/ta/attendance'
+import Print from '@/components/projects/ta/print'
+
+import DigRu from '@/components/projects/dig-ru/Intro'
+
 import MichibataOnBlackIntro from '@/components/projects/michibataonblack/Intro';
 import MichibataOnBlackWeb from '@/components/projects/michibataonblack/web';
 import MichibataOnBlackDegreeShow from '@/components/projects/michibataonblack/degree-show';
@@ -54,6 +59,20 @@ export default function ProjectContentRenderer({
         return <ANASTP onChangeTab={onChangeTab} />;
       case 'proposal':
         return <ANAProposal />;
+    }
+  }
+  else if(slug === 'ta'){
+    switch (selectedTab) {
+      case 'attendance':
+        return <Attendance onChangeTab={onChangeTab} />;
+      case 'print':
+        return <Print onChangeTab={onChangeTab} />;
+    }
+  }
+  else if (slug === 'dig-ru') {
+    switch (selectedTab) {
+      case 'intro':
+        return <DigRu />;
     }
   }
   else if (slug === 'michibata-on-black') {

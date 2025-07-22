@@ -27,7 +27,7 @@ export const projectData: Record<string, ProjectMeta> = {
   'audio-canvas': {
     title: 'Audio Canvas',
     period: '2024.12 ~ 2025.03',
-    tools: ['processing', 'Spotify API'],
+    tools: ['processing', 'Spotify API', 'Python'],
     tabs: [
       { id: 'intro', label: 'work' },
     ],
@@ -43,10 +43,27 @@ export const projectData: Record<string, ProjectMeta> = {
       { id: 'proposal', label: 'proposal' },
     ],
   },
+  'ta': {
+    title: 'TA業務の効率化',
+    period: '2024.09',
+    tools: ['GAS', 'Python', 'PuLP'],
+    tabs: [
+      { id: 'attendance', label: '出席管理システム' },
+      { id: 'print', label: '印刷予約システム' },
+    ],
+  },
+  'dig-ru': {
+    title: 'Digる',
+    period: '2024.10 ~ 2025.01',
+    tools: ['React', 'Node.js', 'Discogs API'],
+    tabs: [
+      { id: 'intro', label: 'work' },
+    ],
+  },
   'michibata-on-black': {
     title: '道端オンブラック',
     period: '2024.04 ~ 2025.03',
-    tools: ['HTML CSS Java Script', 'Illustrator', 'Photoshop', 'InDesign', 'Camera'],
+    tools: ['HTML CSS JavaScript', 'Illustrator', 'Photoshop', 'InDesign', 'Camera'],
     tabs: [
       { id: 'intro', label: '活動内容' },
       { id: 'web', label: 'Webサイト' },
@@ -57,7 +74,7 @@ export const projectData: Record<string, ProjectMeta> = {
   'experimental-work': {
     title: '卒業制作',
     period: '2025.04 ~',
-    tools: ['Next.js', 'Spotify API'],
+    tools: ['Next.js', 'p5.js'],
     tabs: [
       { id: 'intro', label: 'work' },
     ],

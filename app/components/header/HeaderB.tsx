@@ -45,7 +45,7 @@ export default function HeaderWithTabs({
             <div className="text-sm text-gray-400 mt-1 pl-1">
               <span>Period: {period}</span>
               <span className='mr-2 ml-2'> / </span>
-              <span>Tools: {tools.join(' / ')}</span>
+              <span>Tools: {tools.join(', ')}</span>
             </div>
           </div>
         </div>
